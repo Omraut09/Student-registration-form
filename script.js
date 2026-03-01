@@ -4,7 +4,6 @@ const branch=document.getElementById("branch");
 const popup=document.getElementById("courseAnimation");
 const message=document.getElementById("message");
 
-/* BTECH BRACHES */
 const btechBranches=[
 "BTech Electrical Engineering",
 "BTech Computer Science",
@@ -20,7 +19,7 @@ showCourseAnimation(course.value);
 
 if(course.value==="BTech"){
 branch.style.display="block";
-branch.innerHTML="<option>Select Branch</option>";
+branch.innerHTML="<option>Select BTech Branch</option>";
 
 btechBranches.forEach(b=>{
 branch.innerHTML+=`<option>${b}</option>`;
@@ -30,8 +29,8 @@ branch.style.display="none";
 }
 });
 
-/* COURSE POPUP */
 function showCourseAnimation(selected){
+
 let text="🎓 Course Selected";
 
 if(selected==="BTech") text="💻 Engineering Mode Activated!";
@@ -46,7 +45,6 @@ popup.style.display="block";
 setTimeout(()=>popup.style.display="none",2500);
 }
 
-/* SAVE DATA */
 form.addEventListener("submit",(e)=>{
 e.preventDefault();
 
@@ -74,7 +72,7 @@ form.reset();
 branch.style.display="none";
 });
 
-/* EXPORT EXCEL */
+/* EXPORT */
 function exportExcel(){
 
 let students=JSON.parse(localStorage.getItem("students"))||[];
@@ -86,8 +84,6 @@ return;
 
 const worksheet=XLSX.utils.json_to_sheet(students);
 const workbook=XLSX.utils.book_new();
-
 XLSX.utils.book_append_sheet(workbook,worksheet,"Students");
-
 XLSX.writeFile(workbook,"Student_Data.xlsx");
 }
