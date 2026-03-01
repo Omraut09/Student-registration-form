@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SB Jain Student Registration</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- Excel Export Library -->
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="background-animation"></div>
+
+<!-- Animated Avatar -->
+<div id="avatar">🤖</div>
+
+<!-- Course Popup -->
+<div id="courseAnimation" class="popup"></div>
+
+<div class="container">
+
+<div class="logo-box">
+<img src="logo.png">
+</div>
+
+<h2>Student Registration</h2>
+
+<form id="studentForm">
+
+<input type="text" id="rollNumber" placeholder="Roll Number" required>
+
+<input type="text" id="enrollmentNumber"
+placeholder="University Enrollment Number" required>
+
+<input type="text" id="name" placeholder="Full Name" required>
+
+<input type="email" id="email" placeholder="Email Address" required>
+
+<input type="text" id="hobbies" placeholder="Hobbies">
+
+<textarea id="address" placeholder="Residential Address" required></textarea>
+
+<select id="yearStudy" required>
+<option value="">Year of Study</option>
+<option>1st Year</option>
+<option>2nd Year</option>
+<option>3rd Year</option>
+<option>4th Year</option>
+</select>
+
+<select id="semester" required>
+<option value="">Select Semester</option>
+<option>Semester 1</option>
+<option>Semester 2</option>
+<option>Semester 3</option>
+<option>Semester 4</option>
+<option>Semester 5</option>
+<option>Semester 6</option>
+<option>Semester 7</option>
+<option>Semester 8</option>
+</select>
+
+<select id="course" required>
+<option value="">Select Course</option>
+<option value="BTech">BTech</option>
+<option>BBA</option>
+<option>MBA</option>
+<option>BCA</option>
+<option>MCA</option>
+</select>
+
+<select id="branch" style="display:none;"></select>
+
+<label>Admission Date</label>
+<input type="date" id="admissionDate" required>
+
+<button type="submit">Register Student</button>
+
+<button type="button" onclick="exportExcel()" class="exportBtn">
+📊 Export to Excel
+</button>
+
+<p id="message"></p>
+
+</form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
